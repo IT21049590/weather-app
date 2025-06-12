@@ -26,16 +26,16 @@ async function fetchWeather(city) {
     if (!res.ok) throw new Error("Invalid city")
     const data = await res.json()
 
-    elements.location.textContent = `${data.location.name}, ${data.location.country}`
-    elements.localtime.textContent = `Local Time: ${data.location.localtime}`
-    elements.temp.textContent = data.current.temp_c
-    elements.feelslike.textContent = data.current.feelslike_c
-    elements.humidity.textContent = data.current.humidity
-    elements.wind.textContent = data.current.wind_kph
-    elements.uv.textContent = data.current.uv
-    elements.icon.src = `https:${data.current.condition.icon}`
-    elements.icon.alt = data.current.condition.text
-    elements.condition.textContent = data.current.condition.text
+    elements.location.textContent = `${data?.location?.name}, ${data?.location?.country}`
+    elements.localtime.textContent = `Local Time: ${data?.location?.localtime}`
+    elements.temp.textContent = data?.current?.temp_c
+    elements.feelslike.textContent = data?.current?.feelslike_c
+    elements.humidity.textContent = data?.current?.humidity
+    elements.wind.textContent = data?.current?.wind_kph
+    elements.uv.textContent = data?.current?.uv
+    elements.icon.src = `https:${data?.current?.condition?.icon}`
+    elements.icon.alt = data?.current?.condition?.text
+    elements.condition.textContent = data?.current?.condition?.text
 
     weatherCard.classList.remove("hidden")
   } catch (err) {
